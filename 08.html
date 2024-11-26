@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        &.active {
+          border-bottom: 5px solid rgb(176, 22, 22);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul
+      class="nav nav-underline d-flex justify-content-center pt-3 pb-2"
+      id="nav"
+    >
+      <li class="nav-item">
+        <a class="px-3 pb-2 active" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="px-3 pb-2" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="px-3 pb-2" href="#">Contact</a>
+      </li>
+    </ul>
+    <hr class="m-0" />
+    <div class="container">
+      <div class="tab-content mt-3 fs-5" id="contentText">
+        <div>this is home</div>
+        <div class="d-none">About me</div>
+        <div class="d-none">Contact us</div>
+      </div>
+      <!-- 製作 tab UI，點擊 tab 切換到對應內容 -->
+      <script>
+        const nav = document.querySelectorAll("#nav li a");
+        const contentText = document.querySelectorAll("#contentText div");
+        console.log(nav);
+        for (let i = 0; i < nav.length; i++) {
+          nav[i].addEventListener("click", function (e) {
+            e.preventDefault();
+
+            nav.forEach((item) => item.classList.remove("active"));
+            contentText.forEach((content) => content.classList.add("d-none"));
+
+            this.classList.add("active");
+
+            contentText[i].classList.remove("d-none");
+          });
+        }
+      </script>
+    </div>
+  </body>
+</html>

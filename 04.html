@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- 寫一個函式，帶入兩個參數分別是一個陣列跟一個數字 n，回傳一個裡面有所有小於 n 的 數的陣列。 -->
+    <script>
+      function findAllLess(numArr, n) {
+        let newNumArr = numArr.filter(function (num) {
+          return num < n;
+        });
+        return newNumArr;
+      }
+      console.log(findAllLess([1, 2, 3, 4, 5], 4));
+    </script>
+  </body>
+</html>
